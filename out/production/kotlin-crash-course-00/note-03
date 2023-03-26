@@ -1,0 +1,24 @@
+TRY AND CATCH:
+
+fun main(){
+    val number = readLine() ?: "0"
+    val parsedNumber = try{
+        number.toInt()
+    }catch(e: Exception){
+        0
+    }
+    println(parsedNumber)
+}
+
+................
+
+LAMBDA FUNCTIONS
+
+functions that are passed as parameter to another function
+
+
+
+
+.................
+
+GENERICS

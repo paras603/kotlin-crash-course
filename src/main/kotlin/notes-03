@@ -1,0 +1,79 @@
+TRY AND CATCH:
+
+fun main(){
+    val number = readLine() ?: "0"
+    val parsedNumber = try{
+        number.toInt()
+    }catch(e: Exception){
+        0
+    }
+    println(parsedNumber)
+}
+
+................
+
+LAMBDA FUNCTIONS
+
+functions that are passed as parameter to another function
+
+......prebuilt lambda function.............
+
+fun main() {
+    val list = listOf("Kotlin","is","fun")
+    val count = list.count{
+        currentString -> currentString.length >= 3
+    }
+    println(count)
+}
+
+here count is lambda function
+
+
+......custom lambda function..........
+
+fun main() {
+    val list = listOf("Kotlin","is","fun")
+    val count = list.customCount{
+        currentString -> currentString.length >= 3
+    }
+    println(count)
+}
+
+fun List<String>.customCount(function: (String) -> Boolean): Int {
+    var counter = 0
+    for(string in this){
+        if(function(string)){
+            counter++
+        }
+    }
+    return counter
+}
+
+here customCount is a custom lambda function
+.................
+
+GENERICS
+
+if we want to call the custom function on any kind of list, not only on list of string,
+we use generics, which is basically a type parameter
+
+fun main() {
+    val list = listOf("Kotlin","is","fun")
+    val count = list.customCount{
+        currentString -> currentString.length >= 3
+    }
+    println(count)
+}
+
+fun <T>List<T>.customCount(function: (T) -> Boolean): Int {
+    var counter = 0
+    for(string in this){
+        if(function(string)){
+            counter++
+        }
+    }
+    return counter
+}
+
+the use of <T> in the custom lambda function is generics,
+this makes the custom function to call on ant type of list

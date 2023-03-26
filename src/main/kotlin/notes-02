@@ -1,0 +1,176 @@
+FUNCTIONS:
+
+fun print10Numbers(){
+    for(i in 1..10){
+        println(i)
+    }
+}
+
+-----------------------------------
+
+fun main() {
+    val x = isEven(5)
+    println(x)
+}
+
+fun isEven(number: Int): Boolean{
+    return number % 2 == 0
+}
+
+assigning default parameter....
+
+fun isEven(number: Int = 10): Boolean{
+    return number % 2 == 0
+}
+
+name parameter.......optional, improves readability
+
+val x = isEven(number = 5
+
+.....................................
+
+EXTENSION FUNCTIONS:
+
+fun main(){
+    x = 3
+    println(x.isOdd())
+}
+
+fun Int.isOdd(): Boolean{
+    return this % 2 == 1
+}
+-------------------------------
+
+
+
+CLASSES:
+
+creating class;
+
+class Animal(
+    val name: String
+    ){
+        init{
+            println("Hi, I am $animal")
+            }
+    }
+
+now in function:
+
+fun main(){
+    val pigeon = Animal("pigeon")
+}
+
+
+
+.....................................
+
+
+INHERITANCE:
+
+open class Animal(
+    val name: String,
+    val legCount: Int = 4
+) {
+    init {
+        println("Hello, I am $name")
+    }
+}
+
+class Dog : Animal("Dog") {
+
+    fun bark(){
+        println("Woof, Woof")
+    }
+
+}
+
+fun main() {
+    val dog = Dog()
+    dog.bark()
+}
+
+creating another class that follows inheritance
+
+class Cat:Animal("Cat") {
+    fun meow(){
+        println("Meow!")
+    }
+}
+
+fun main() {
+    val dog = Dog()
+    dog.bark()
+
+    val cat = Cat()
+    cat.meow()
+}
+
+in this case, we are still able to create an instance of Animal class
+which is not logical hereby abstract class is needed
+
+...................
+
+ABSTRACT CLASS
+
+abstract class Animal(
+    val name: String,
+    val legCount: Int = 4
+) {
+    init {
+        println("Hello, I am $name")
+    }
+}
+
+abstract keyword can also be used to make abstract functions
+
+ABSTRACT FUNCTION
+
+abstract class Animal(
+    val name: String,
+    val legCount: Int = 4
+) {
+    init {
+        println("Hello, I am $name")
+    }
+
+    abstract fun makeSound()
+}
+
+class Cat : Animal("Cat"){
+    override fun makeSound(){
+        println("Meow!")
+    }
+}
+
+class Dog : Animal("Dog"){
+    override fun makeSound(){
+        println("Woof!")
+    }
+}
+
+fun main(){
+    val dog = Dog()
+    dog.makeSound()
+
+    val cat = Cat()
+    cat.makeSound()
+}
+
+---------------------------------------------
+
+
+ANONYMOUS CLASS
+
+fun main() {
+   val bear = object : Animal("Camembear"){
+       override fun makeSound() {
+           println("Roar!!!")
+       }
+    }
+
+    bear.makeSound()
+}
+
+
+

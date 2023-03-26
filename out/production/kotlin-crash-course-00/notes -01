@@ -1,0 +1,173 @@
+
+   HELLO WORLD:
+
+    println("Hello World!")
+
+
+
+    VARIABLES AND DATA TYPES:
+
+    var x: Int = 3
+    println("The value of x is $x")
+
+    x = 1
+    println("The new value of x is $x")
+
+    var can be used to initialize any variable mentioning it's type'
+    val can be used to declare variable, but the variable can not be reassigned
+        and val is intelligent :-) no need to mention variable type
+    for eg;
+
+    val x = 2
+    println("The value of x using val keyword is $x")
+
+    x = 4 can not be reassigned when val is used
+
+    whole number
+    val x = 3 integer format, 32 bit number, can save upto 2 to the power 32 numbers
+    val x = 3L long format, 64 bit number, can save upto 2 to the power 64 numbers
+
+    decimal numbers
+    val x = 3.33  double
+    val x = 3.33f float
+    double is more precise than float but takes more memory
+
+    val wholeNumber = 3
+    val bigNumber = 3L
+    val preciseDecimal = 3.33
+    val decimal = 3.33f
+    val isStudent = true
+    val isStudent = false
+    val iAmLetter = 'a'
+
+
+
+    ARITHMETIC OPERATORS:
+
+    val x = 3 * 4
+    println("the value of x is $x")
+
+    val x = 2 + 0
+    val x = 9 - 4
+
+    val x = 3 / 4   ->    prints 0, provides whole number
+    val x = 4 / 3   ->  prints 1,
+    val x = 3f / 4f ->  prints 0.75
+
+    val x = 10 % 3  ->  prints 1 i.e, remainder
+
+
+
+
+    LOGICAL AND COMPARISON OPERATORS:
+
+    val isAdult = true
+    val isProgrammer = true
+    val isAdultProgrammer = isAdult && isProgrammer  .......   and
+    val isAdultOrProgrammer = isAdult || isProgrammer   ......  or
+
+    println("isAdultProgrammer")    ->  prints true
+
+    val isAdultProgrammer = (isAdult == isProgrammer)
+    val isNotAdultProgrammer = (isAdult != isProgrammer)
+    or
+    val isNotAdultProgrammer = !(isAdult == isProgrammer)   ....    ! makes result negative
+
+
+
+
+    STRINGS:
+
+    val string = "Kotlin is the best language"
+    println(string)
+    println(string.toUpperCase())   ->   converts string to uppercase
+
+
+
+
+    IF CONDITIONS:
+
+    val x = 1 + 1
+    if (x == 2){
+        println("x is 2")
+    } else if (x == 0){
+        println(" x is 0")
+    } else {
+        println("x is other than 2 and 0")
+    }
+
+    val y = if(x == 2) 2 else 3
+    -> if x is equal to 2, y equals to 2 else y equlas 3
+
+
+
+
+    NULL VALUES:
+
+
+    val x: Int? = null  ->  initializing null varialble
+
+    val number1 = readLine()
+    val number2 = readLine()
+    val result = number1.toInt() + number2.toInt()
+
+    println(result)     ->      may result to null pointer exception
+
+    so,
+    val number1 = readLine() ?: "0"     ->  if null replaces with "0"
+    val number2 = readLine() ?: "0"     ->  if null replaces with "0"
+    val result = number1.toInt() + number2.toInt()
+
+    println(result)
+
+
+
+
+
+    LISTS:
+
+    IMMUTABLE LIST:
+    val shoppingList = listOf<String>("apple", "car", "books")
+    println(shoppingList[0])    ->   prints apple
+    println(shoppingList[3])    ->  outOfIndex Exception
+
+    MUTABLE lIST:
+    val shoppingList = mutableListOf("car", "bike", "jeep")
+    shoppingList.add("books")   .....    can be used to add new item in list
+    println(shoppingList[3])    ->   prints jeep
+
+
+
+
+    WHILE LOOP:
+
+    var counter = 0
+    while(counter < shoppingList.size){    .....    .size returns the size of list
+        println (shoppingList[counter])
+        counter++
+    }
+
+
+
+    FOR LOOP:
+
+    for(shoppingItem in shoppingList){
+        println(shippingItem)
+    }
+
+    for(i in 1..100){
+        println(i)
+    }
+    ->  prints 1 to 100
+
+
+
+    WHEN EXPRESSION:
+
+    when(x){
+        in 1..2 -> println("x is between 1 and 2")
+        in 3..10 -> println("x is between 3 and 10")
+        else -> {
+        println("x is not between 1 and 10")
+        }
+    }
